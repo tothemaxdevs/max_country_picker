@@ -46,7 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: MaxCountryPicker(
                 flagMode: FlagMode.circle,
                 viewMode: ViewMode.modal,
-                initialCountryCode: 'MY',
+                flagIconSize: 22,
+                initialCountryCode: 'ID',
               ),
             )
           ],
