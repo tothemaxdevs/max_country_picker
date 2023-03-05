@@ -5,7 +5,7 @@
 ###### Country picker with three icon mode Circle, Square, and Emoji, and also have two view mode Page and Modal Bottom Sheet.
 ## Screenshots
 
-<!-- ![App Screenshot](https://www.easygifanimator.net/images/samples/video-to-gif-sample.gif) -->
+![App Screenshot](https://raw.githubusercontent.com/tothemaxdevs/max_country_list/master/screenshot/example.gif)
 
 
 ## Installation
