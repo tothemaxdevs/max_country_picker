@@ -23,9 +23,10 @@ Import
 ```
     
 
+
 ## Usage
 
-```javascript
+```bash
 MaxCountryPicker(
   flagMode: FlagMode.square,
   viewMode: ViewMode.page,
@@ -35,6 +36,8 @@ MaxCountryPicker(
   },
 )
 ```
+
+
 
 
 ## Parameters

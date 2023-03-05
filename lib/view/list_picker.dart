@@ -18,7 +18,7 @@ class ListPicker extends StatefulWidget {
       : super(key: key);
 
   @override
-  _ListPickerState createState() => _ListPickerState();
+  State<ListPicker> createState() => _ListPickerState();
 }
 
 class _ListPickerState extends State<ListPicker> {

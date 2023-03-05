@@ -17,7 +17,7 @@ class ListPickerPage extends StatefulWidget {
       : super(key: key);
 
   @override
-  _ListPickerPageState createState() => _ListPickerPageState();
+  State<ListPickerPage> createState() => _ListPickerPageState();
 }
 
 class _ListPickerPageState extends State<ListPickerPage> {

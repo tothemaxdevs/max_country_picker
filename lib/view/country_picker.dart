@@ -28,20 +28,42 @@ class MaxCountryPicker extends StatefulWidget {
       required this.onCanged})
       : super(key: key);
 
+// Customize main button country code textstyle
   final TextStyle? countryCodeStyle;
+
+  // Customize main button country name textstyle
   final TextStyle? countryNameStyle;
+
+  // Show or hide button dropdown icon
   final bool? showDropDown;
+
+  // Show or hide button flag icon
   final bool? showFlagIcon;
+
+  // Show or hide button flag name
   final bool? showCountryName;
+
+  // Set dropdown icon color
   final Color? dropDownColor;
+
+  // Set flag icon size
   final double? flagIconSize;
+
+  // Change flag mode emoji, circle, or square
   final FlagMode? flagMode;
+
+  // Change country view mode page or modal bottom sheet
   final ViewMode? viewMode;
+
+  // Set initial country code
   final String? initialCountryCode;
+
+  // Configure country list
   final CountryListConfig countryListConfig;
+
   final Function(MaxCountry) onCanged;
   @override
-  _MaxCountryPickerState createState() => _MaxCountryPickerState();
+  State<MaxCountryPicker> createState() => _MaxCountryPickerState();
 }
 
 class _MaxCountryPickerState extends State<MaxCountryPicker> {
