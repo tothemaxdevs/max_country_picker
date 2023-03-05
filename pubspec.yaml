@@ -1,6 +1,6 @@
-name: max_country_list
-description: Fltuter pick countty code with multiple mode.
-homepage: https://github.com/tothemaxdevs/max_country_list
+name: max_country_picker
+description: Country picker with three icon mode Circle, Square, and Emoji, and also have two view mode Page and Modal Bottom Sheet.
+homepage: https://github.com/tothemaxdevs/max_country_picker
 version: 0.0.0+1
 
 environment:

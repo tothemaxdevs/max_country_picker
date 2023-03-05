@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:max_country_list/config/country_list_config.dart';
-import 'package:max_country_list/src/max_country_list.dart';
-import 'package:max_country_list/max_country_picker.dart';
-import 'package:max_country_list/model/country_model.dart';
-import 'package:max_country_list/view/search_bar.dart';
-import 'package:max_country_list/utils/utils.dart';
+import 'package:max_country_picker/config/country_list_config.dart';
+import 'package:max_country_picker/model/country_model.dart';
+import 'package:max_country_picker/src/max_country_list.dart';
+import 'package:max_country_picker/view/country_picker.dart';
+import 'package:max_country_picker/view/search_bar.dart';
+import 'package:max_country_picker/utils/utils.dart';
 
 class ListPicker extends StatefulWidget {
   Function(MaxCountry)? onCanged;
@@ -32,7 +32,21 @@ class _ListPickerState extends State<ListPicker> {
   @override
   void initState() {
     setState(() {
-      dataList = countryList;
+      if (widget.countryListConfig.filterOnlyShowingCountry.isNotEmpty) {
+        dataList = countryList
+            .where((element) => widget
+                .countryListConfig.filterOnlyShowingCountry
+                .contains(element.code))
+            .toList()
+            .where((element) => !widget.countryListConfig.filterExcludeCountry
+                .contains(element.code))
+            .toList();
+      } else {
+        dataList = countryList
+            .where((element) => !widget.countryListConfig.filterExcludeCountry
+                .contains(element.code))
+            .toList();
+      }
     });
     super.initState();
   }
@@ -43,18 +57,41 @@ class _ListPickerState extends State<ListPicker> {
       backgroundColor: widget.countryListConfig.backgroundColor,
       body: Column(
         children: [
-          SearchBar(
-            controller: searchController,
-            onChanged: (value) {
-              setState(() {
-                dataList = countryList
-                    .where((e) =>
-                        e.name!.toLowerCase().startsWith(value.toLowerCase()))
-                    .toList();
-              });
-            },
-            countrtyListConfig: widget.countryListConfig,
-          ),
+          if (widget.countryListConfig.hideSearchBar == false)
+            SearchBar(
+              controller: searchController,
+              onChanged: (value) {
+                setState(() {
+                  if (widget
+                      .countryListConfig.filterOnlyShowingCountry.isNotEmpty) {
+                    dataList = countryList
+                        .where((element) => widget
+                            .countryListConfig.filterOnlyShowingCountry
+                            .contains(element.code))
+                        .toList()
+                        .where((element) => !widget
+                            .countryListConfig.filterExcludeCountry
+                            .contains(element.code))
+                        .toList()
+                        .where((e) => e.name!
+                            .toLowerCase()
+                            .startsWith(value.toLowerCase()))
+                        .toList();
+                  } else {
+                    dataList = countryList
+                        .where((element) => !widget
+                            .countryListConfig.filterExcludeCountry
+                            .contains(element.code))
+                        .toList()
+                        .where((e) => e.name!
+                            .toLowerCase()
+                            .startsWith(value.toLowerCase()))
+                        .toList();
+                  }
+                });
+              },
+              countrtyListConfig: widget.countryListConfig,
+            ),
           const SizedBox(
             height: 10,
           ),
@@ -84,7 +121,7 @@ class _ListPickerState extends State<ListPicker> {
                   style: widget.countryListConfig.countryCodeTextStyle,
                 ),
                 onTap: () {
-                  Navigator.pop(context, country);
+                  Navigator.pop(context);
                   widget.onCanged!(country);
                 },
               );

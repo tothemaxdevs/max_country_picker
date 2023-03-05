@@ -1,13 +1,22 @@
+import 'dart:developer';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:max_country_list/config/country_list_config.dart';
-import 'package:max_country_list/max_country_picker.dart';
-import 'package:max_country_list/view/list_picker.dart';
+import 'package:max_country_picker/config/country_list_config.dart';
+import 'package:max_country_picker/model/country_model.dart';
+import 'package:max_country_picker/view/country_picker.dart';
+import 'package:max_country_picker/view/list_picker.dart';
 
 class ListPickerPage extends StatefulWidget {
   FlagMode? mode;
   CountryListConfig countryListConfig;
+  Function(MaxCountry)? onCanged;
+
   ListPickerPage(
-      {Key? key, this.mode = FlagMode.circle, required this.countryListConfig})
+      {Key? key,
+      this.mode = FlagMode.circle,
+      required this.countryListConfig,
+      this.onCanged})
       : super(key: key);
 
   @override
@@ -32,15 +41,20 @@ class _ListPickerPageState extends State<ListPickerPage> {
           elevation: 0.0,
           backgroundColor: widget.countryListConfig.backgroundColor,
           leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: widget.countryListConfig.appBarCustomBackButtonIcon!)),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: widget.countryListConfig.appBarCustomBackButtonIcon ??
+                Icon(Icons.arrow_back_ios_new_rounded,
+                    color: widget.countryListConfig.appBarBackButtonColor!,
+                    size: 20),
+          )),
       body: ListPicker(
-        mode: widget.mode,
-        countryListConfig: widget.countryListConfig,
-        // onCanged: widget.onCanged,
-      ),
+          mode: widget.mode,
+          countryListConfig: widget.countryListConfig,
+          onCanged: (value) {
+            widget.onCanged!(value);
+          }),
     );
   }
 }

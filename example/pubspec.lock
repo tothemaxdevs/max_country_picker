@@ -95,7 +95,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.5"
-  max_country_list:
+  max_country_picker:
     dependency: "direct main"
     description:
       path: ".."

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:max_country_list/config/country_list_config.dart';
-import 'package:max_country_list/max_country_picker.dart';
-import 'package:max_country_list/model/country_model.dart';
-import 'package:max_country_list/utils/utils.dart';
-import 'package:max_country_list/view/list_picker.dart';
+import 'package:max_country_picker/config/country_list_config.dart';
+import 'package:max_country_picker/model/country_model.dart';
+import 'package:max_country_picker/utils/utils.dart';
+import 'package:max_country_picker/view/country_picker.dart';
+import 'package:max_country_picker/view/list_picker.dart';
 
 listPickerModal(BuildContext context,
     {required CountryListConfig countryListConfig,

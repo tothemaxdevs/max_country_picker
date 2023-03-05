@@ -1,4 +1,4 @@
-import 'package:max_country_list/model/country_model.dart';
+import 'package:max_country_picker/model/country_model.dart';
 
 class MaxCountryList {
   static List<MaxCountry> get list => _list;

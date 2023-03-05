@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:max_country_list/config/country_list_config.dart';
+import 'package:max_country_picker/config/country_list_config.dart';
 
 class SearchBar extends StatelessWidget {
   String? hintText;
@@ -16,8 +16,6 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    initSizeConfig(context);
-
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -34,37 +32,20 @@ class SearchBar extends StatelessWidget {
           style: countrtyListConfig.searchTextStyle,
           onChanged: onChanged,
           decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                // vertical: 6,
-              ),
-              border: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              enabledBorder: InputBorder.none,
-              hintText: countrtyListConfig.searchHintText,
-              hintStyle: countrtyListConfig.searchHintTextStyle,
-              prefixIcon: countrtyListConfig.searchCustomSearchIcon),
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 10,
+            ),
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            hintText: countrtyListConfig.searchHintText,
+            hintStyle: countrtyListConfig.searchHintTextStyle,
+            prefixIcon: countrtyListConfig.searchCustomSearchIcon ??
+                Icon(Icons.search,
+                    color: countrtyListConfig.searchIconColor, size: 22),
+          ),
         ),
       ),
     );
-  }
-}
-
-void initSizeConfig(context) {
-  SizeConfig().init(context);
-}
-
-class SizeConfig {
-  static MediaQueryData _mediaQueryData = const MediaQueryData();
-  static double screenWidth = 0.0;
-  static double screenHeight = 0.0;
-  static double defaultSize = 0.0;
-  static Orientation orientation = Orientation.portrait;
-
-  void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData.size.width;
-    screenHeight = _mediaQueryData.size.height;
-    orientation = _mediaQueryData.orientation;
   }
 }

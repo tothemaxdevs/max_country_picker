@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:max_country_list/config/country_list_config.dart';
-import 'package:max_country_list/max_country_picker.dart';
-import 'package:max_country_list/model/country_model.dart';
+import 'package:max_country_picker/config/country_list_config.dart';
+import 'package:max_country_picker/model/country_model.dart';
+import 'package:max_country_picker/view/country_picker.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 // IconViewMode
@@ -13,14 +13,14 @@ countryFlag(
   if (mode == FlagMode.circle) {
     return SvgPicture.asset(
       country.flagIconCircle!,
-      package: 'max_country_list',
+      package: 'max_country_picker',
       width: flagIconSize,
     );
   } else if (mode == FlagMode.square) {
     return SvgPicture.asset(
       country.flagIconSquare!,
       width: flagIconSize,
-      package: 'max_country_list',
+      package: 'max_country_picker',
     );
   } else if (mode == FlagMode.emoji) {
     return Text(
