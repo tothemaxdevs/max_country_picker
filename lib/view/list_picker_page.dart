@@ -1,6 +1,3 @@
-import 'dart:developer';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:max_country_picker/config/country_list_config.dart';
 import 'package:max_country_picker/model/country_model.dart';
@@ -8,11 +5,11 @@ import 'package:max_country_picker/view/country_picker.dart';
 import 'package:max_country_picker/view/list_picker.dart';
 
 class ListPickerPage extends StatefulWidget {
-  FlagMode? mode;
-  CountryListConfig countryListConfig;
-  Function(MaxCountry)? onCanged;
+  final FlagMode? mode;
+  final CountryListConfig countryListConfig;
+  final Function(MaxCountry)? onCanged;
 
-  ListPickerPage(
+  const ListPickerPage(
       {Key? key,
       this.mode = FlagMode.circle,
       required this.countryListConfig,

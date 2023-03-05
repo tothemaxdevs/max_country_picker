@@ -7,10 +7,10 @@ import 'package:max_country_picker/view/search_bar.dart';
 import 'package:max_country_picker/utils/utils.dart';
 
 class ListPicker extends StatefulWidget {
-  Function(MaxCountry)? onCanged;
-  FlagMode? mode;
-  CountryListConfig countryListConfig;
-  ListPicker(
+  final Function(MaxCountry)? onCanged;
+  final FlagMode? mode;
+  final CountryListConfig countryListConfig;
+  const ListPicker(
       {Key? key,
       this.onCanged,
       this.mode = FlagMode.circle,

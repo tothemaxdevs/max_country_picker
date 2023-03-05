@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:max_country_picker/config/country_list_config.dart';
 import 'package:max_country_picker/model/country_model.dart';
@@ -14,7 +12,7 @@ enum FlagMode { circle, square, emoji }
 enum ViewMode { page, modal }
 
 class MaxCountryPicker extends StatefulWidget {
-  MaxCountryPicker(
+  const MaxCountryPicker(
       {Key? key,
       this.countryCodeStyle,
       this.countryNameStyle,
@@ -30,18 +28,18 @@ class MaxCountryPicker extends StatefulWidget {
       required this.onCanged})
       : super(key: key);
 
-  TextStyle? countryCodeStyle;
-  TextStyle? countryNameStyle;
-  bool? showDropDown;
-  bool? showFlagIcon;
-  bool? showCountryName;
-  Color? dropDownColor;
-  double? flagIconSize;
-  FlagMode? flagMode;
-  ViewMode? viewMode;
-  String? initialCountryCode;
-  CountryListConfig countryListConfig;
-  Function(MaxCountry) onCanged;
+  final TextStyle? countryCodeStyle;
+  final TextStyle? countryNameStyle;
+  final bool? showDropDown;
+  final bool? showFlagIcon;
+  final bool? showCountryName;
+  final Color? dropDownColor;
+  final double? flagIconSize;
+  final FlagMode? flagMode;
+  final ViewMode? viewMode;
+  final String? initialCountryCode;
+  final CountryListConfig countryListConfig;
+  final Function(MaxCountry) onCanged;
   @override
   _MaxCountryPickerState createState() => _MaxCountryPickerState();
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  String label;
-  Widget prefixWidget;
-  CustomTextField({Key? key, required this.label, required this.prefixWidget})
+  final String label;
+  final Widget prefixWidget;
+  const CustomTextField(
+      {Key? key, required this.label, required this.prefixWidget})
       : super(key: key);
 
   @override
