@@ -89,6 +89,6 @@ MaxCountryPicker(
 
 Your support can make us grow up :)
 
-[![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://paypal.me/tothemaxdev/)
+[!["Buy Me A Coffee"](https://tothemax.dev/assets/support_button.svg)](https://linktr.ee/tothemaxdev)
 
 
