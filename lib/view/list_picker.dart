@@ -6,11 +6,11 @@ import 'package:max_country_picker/view/country_picker.dart';
 import 'package:max_country_picker/view/search_bar.dart';
 import 'package:max_country_picker/utils/utils.dart';
 
-class ListPicker extends StatefulWidget {
+class MaxListPicker extends StatefulWidget {
   final Function(MaxCountry)? onCanged;
   final FlagMode? mode;
   final CountryListConfig countryListConfig;
-  const ListPicker(
+  const MaxListPicker(
       {Key? key,
       this.onCanged,
       this.mode = FlagMode.circle,
@@ -18,10 +18,10 @@ class ListPicker extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<ListPicker> createState() => _ListPickerState();
+  State<MaxListPicker> createState() => _MaxListPickerState();
 }
 
-class _ListPickerState extends State<ListPicker> {
+class _MaxListPickerState extends State<MaxListPicker> {
   String? title;
 
   final searchController = TextEditingController();
@@ -58,7 +58,7 @@ class _ListPickerState extends State<ListPicker> {
       body: Column(
         children: [
           if (widget.countryListConfig.hideSearchBar == false)
-            SearchBar(
+            MaxSearchBar(
               controller: searchController,
               onChanged: (value) {
                 setState(() {
@@ -127,7 +127,7 @@ class _ListPickerState extends State<ListPicker> {
               );
             },
             separatorBuilder: (BuildContext context, int index) {
-              return divideThick(
+              return maxDivideThick(
                   color: widget.countryListConfig.separatedColor);
             },
           ))

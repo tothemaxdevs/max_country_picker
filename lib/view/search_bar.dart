@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:max_country_picker/config/country_list_config.dart';
 
-class SearchBar extends StatelessWidget {
+class MaxSearchBar extends StatelessWidget {
   final String? hintText;
   final TextEditingController? controller;
   final Function(String)? onChanged;
   final CountryListConfig countrtyListConfig;
-  const SearchBar({
+  const MaxSearchBar({
     Key? key,
     this.hintText,
     this.controller,

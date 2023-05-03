@@ -9,10 +9,10 @@ listPickerModal(BuildContext context,
     {required CountryListConfig countryListConfig,
     FlagMode? flagMode,
     Function(MaxCountry)? onCanged}) {
-  bottomSheet(
+  maxBottomSheet(
     context,
     Expanded(
-      child: ListPicker(
+      child: MaxListPicker(
         mode: flagMode,
         onCanged: onCanged,
         countryListConfig: countryListConfig,

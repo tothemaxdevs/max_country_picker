@@ -77,7 +77,7 @@ class _MaxCountryPickerState extends State<MaxCountryPicker> {
               (element) => element.code == widget.initialCountryCode)]
           : MaxCountryList.list.first;
     } on Exception catch (_) {
-      print('Country code not found');
+      MaxCountryList.list.first;
     }
 
     super.initState();

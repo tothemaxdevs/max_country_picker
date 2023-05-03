@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:max_country_picker/config/country_list_config.dart';
 import 'package:max_country_picker/model/country_model.dart';
 import 'package:max_country_picker/view/country_picker.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 // IconViewMode
 countryFlag(
@@ -30,7 +29,7 @@ countryFlag(
   }
 }
 
-Widget divideThick({height, color, margin}) {
+Widget maxDivideThick({height, color, margin}) {
   return Container(
     height: height ?? 2,
     color: color ?? Colors.grey.shade50,
@@ -38,12 +37,12 @@ Widget divideThick({height, color, margin}) {
   );
 }
 
-bottomSheet(BuildContext context, Widget child,
+maxBottomSheet(BuildContext context, Widget child,
     {String? subtitle,
     String? title,
     double? height,
     required CountryListConfig countryListConfig}) {
-  return showCupertinoModalBottomSheet(
+  return showBottomSheet(
       backgroundColor: countryListConfig.modalBackgoroundColor,
       context: context,
       builder: (BuildContext context) {
@@ -55,7 +54,8 @@ bottomSheet(BuildContext context, Widget child,
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                indicatorModal(color: countryListConfig.modalIndicatorColor!),
+                maxIndicatorModal(
+                    color: countryListConfig.modalIndicatorColor!),
                 const SizedBox(height: 6),
                 if (title != null)
                   Container(
@@ -77,19 +77,19 @@ bottomSheet(BuildContext context, Widget child,
       });
 }
 
-Widget indicatorModal({Color? color}) {
+Widget maxIndicatorModal({Color? color}) {
   return Align(
     alignment: Alignment.center,
     child: Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       width: 40,
       height: 8,
-      decoration: roundedDecoration(color: color ?? Colors.grey.shade200),
+      decoration: maxRoundedDecoration(color: color ?? Colors.grey.shade200),
     ),
   );
 }
 
-BoxDecoration roundedDecoration({color, borderColor, radius}) {
+BoxDecoration maxRoundedDecoration({color, borderColor, radius}) {
   return BoxDecoration(
       color: color ?? Colors.white,
       border: Border.all(color: borderColor ?? Colors.white, width: 1),

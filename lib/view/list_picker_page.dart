@@ -46,7 +46,7 @@ class _ListPickerPageState extends State<ListPickerPage> {
                     color: widget.countryListConfig.appBarBackButtonColor!,
                     size: 20),
           )),
-      body: ListPicker(
+      body: MaxListPicker(
           mode: widget.mode,
           countryListConfig: widget.countryListConfig,
           onCanged: (value) {
