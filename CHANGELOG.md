@@ -11,3 +11,7 @@ Fixing immutable error
 
 Remove additional package
 Fixing widget conflic
+
+## 1.0.0+3
+
+Update typo

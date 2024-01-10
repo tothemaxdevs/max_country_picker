@@ -1,7 +1,7 @@
 name: max_country_picker
 description: Country picker with three icon mode Circle, Square, and Emoji, and also have two view mode Page and Modal Bottom Sheet.
 homepage: https://github.com/tothemaxdevs/max_country_picker
-version: 1.0.0+2
+version: 1.0.0+3
 
 environment:
   sdk: ">=2.18.6 <3.0.0"

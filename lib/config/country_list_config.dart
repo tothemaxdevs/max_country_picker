@@ -75,7 +75,7 @@ class CountryListConfig {
   const CountryListConfig(
       {this.backgroundColor = Colors.white,
       this.flagIconSize = 26,
-      this.title = 'Select cuntry',
+      this.title = 'Select country',
       this.appBarTitleTextStyle = const TextStyle(
           color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
       this.searchHintText = 'Search',
