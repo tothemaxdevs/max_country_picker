@@ -89,6 +89,6 @@ MaxCountryPicker(
 
 Your support can make us grow up :)
 
-[!["Buy Me A Coffee"](https://tothemax.dev/assets/support_button.svg)](https://linktr.ee/tothemaxdev)
+[!["Buy Me A Coffee"](https://tothemax.dev/assets/max_support_button.png)](https://linktr.ee/tothemaxdev)
 
 
